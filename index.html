@@ -145,6 +145,7 @@
             display: block;
             margin-bottom: 5px;
             color: #0ff;
+            font-weight: bold;
         }
 
         .form-group input,
@@ -153,8 +154,16 @@
             padding: 10px;
             border: 1px solid #0ff;
             border-radius: 5px;
-            background-color: rgba(20, 20, 30, 0.5);
+            background-color: rgba(20, 20, 30, 0.8);
             color: #0ff;
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         footer {
