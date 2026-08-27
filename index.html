@@ -3,20 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Horizons - Space Exploration</title>
+    <title>Cosmic Horizons - Space Exploration & Technology</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 6rem 0;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+        .features {
+            padding: 3rem 0;
+            background-color: var(--light-color);
+        }
+        .feature-card {
+            margin-bottom: 2rem;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            color: var(--secondary-color);
+        }
+        .about-section {
+            padding: 3rem 0;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .team-section {
+            padding: 3rem 0;
+            background-color: var(--light-color);
+        }
+        .team-member {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .team-member h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .news-section {
+            padding: 3rem 0;
+        }
+        .news-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .news-item img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 2rem;
+            border-radius: 8px;
+        }
+        .news-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        .news-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .gallery-section {
+            padding: 3rem 0;
+            background-color: var(--light-color);
+        }
+        .gallery-item {
+            margin-bottom: 1rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+        .footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .social-icons {
+            margin: 1rem 0;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        .newsletter {
+            margin-top: 1rem;
+        }
+        .newsletter input {
+            padding: 0.5rem;
+            border-radius: 4px 0 0 4px;
+            border: none;
+            width: 70%;
+        }
+        .newsletter button {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .news-item {
+                flex-direction: column;
+            }
+            .news-item img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Cosmic Horizons</h1>
-            <p>Exploring the Final Frontier</p>
-        </div>
+        <h1>Cosmic Horizons</h1>
+        <p>Exploring the Final Frontier with Cutting-Edge Technology</p>
     </header>
-    
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+        <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,13 +258,10 @@
                         <a class="nav-link" href="#team">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#news">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -50,309 +270,190 @@
             </div>
         </div>
     </nav>
-
     <section class="hero" id="home">
         <div class="container">
             <h1>Unlocking the Mysteries of the Universe</h1>
-            <p>Join us on a journey through space and time as we explore the cosmos, uncover the secrets of the universe, and push the boundaries of human knowledge.</p>
-            <a href="#missions" class="btn btn-primary btn-lg mt-3">Explore Our Missions</a>
-            <a href="#about" class="btn btn-secondary btn-lg mt-3 ml-2">Learn More</a>
+            <p>At Cosmic Horizons, we are dedicated to pioneering the future of space exploration through innovative technology and groundbreaking research. Join us as we journey beyond the stars.</p>
+            <a href="#missions" class="btn btn-primary btn-lg mt-3">Explore Missions</a>
         </div>
     </section>
-
     <section class="features" id="missions">
         <div class="container">
-            <h2>Our Space Missions</h2>
+            <h2 class="section-title">Our Missions</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.unsplash.com/photo-1581888225199-e47f3842a9e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mars Rover Mission">
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mars Exploration">
                         <h3>Mars Exploration</h3>
-                        <p>Our advanced rovers are exploring the Martian surface, searching for signs of past life and preparing for future human missions to the Red Planet.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <p>Our ongoing Mars missions aim to uncover the secrets of the Red Planet, including the search for signs of past life and potential habitability.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Satellite Mission">
-                        <h3>Earth Observation</h3>
-                        <p>Our satellite network provides critical data about Earth's climate, weather patterns, and environmental changes, helping to protect our planet.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1506318139363-39a33616c1e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Lunar Base Project">
+                        <h3>Lunar Base Project</h3>
+                        <p>We are working towards establishing a sustainable human presence on the Moon, paving the way for future deep-space missions.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Deep Space Probe">
-                        <h3>Deep Space Exploration</h3>
-                        <p>Our probes are venturing into the outer reaches of our solar system and beyond, exploring asteroids, comets, and the mysteries of deep space.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Deep Space Probes">
+                        <h3>Deep Space Probes</h3>
+                        <p>Our deep space probes are exploring the far reaches of our solar system and beyond, sending back invaluable data about distant worlds.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="about-section" id="about">
         <div class="container">
-            <h2>About Cosmic Horizons</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="mission-statement">
-                        <h3>Our Mission</h3>
-                        <p>To advance space exploration through cutting-edge technology, scientific research, and international collaboration. We strive to expand humanity's understanding of the universe and our place within it.</p>
-                        <h3>Our Vision</h3>
-                        <p>A future where humanity can explore and inhabit other planets, unlocking the full potential of our universe. We envision a world where space travel is accessible to all, and where the mysteries of the cosmos are within our reach.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1581888225199-e47f3842a9e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Space Station" class="img-fluid rounded">
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-3 text-center">
-                    <i class="fas fa-rocket fa-3x mb-3" style="color: var(--primary-color);"></i>
-                    <h4>15+ Missions</h4>
-                    <p>Successfully launched and completed</p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <i class="fas fa-users fa-3x mb-3" style="color: var(--primary-color);"></i>
-                    <h4>500+ Team Members</h4>
-                    <p>From around the world</p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <i class="fas fa-globe fa-3x mb-3" style="color: var(--primary-color);"></i>
-                    <h4>20+ Countries</h4>
-                    <p>Collaborating on our projects</p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <i class="fas fa-award fa-3x mb-3" style="color: var(--primary-color);"></i>
-                    <h4>100+ Awards</h4>
-                    <p>For innovation and achievement</p>
-                </div>
+            <h2 class="section-title">About Cosmic Horizons</h2>
+            <div class="about-content">
+                <p>Founded in 2010, Cosmic Horizons is a leading organization in space exploration and technology. Our mission is to advance human understanding of the universe through innovative research, cutting-edge technology, and international collaboration.</p>
+                <p>We believe that space exploration is not just about discovering new worlds, but also about inspiring the next generation of scientists, engineers, and dreamers. Our team is composed of experts from diverse fields, all united by a shared passion for exploration and discovery.</p>
+                <p>Our vision is to create a future where humanity can explore and inhabit other planets, unlocking the full potential of our universe. We are committed to pushing the boundaries of what is possible and making space accessible to all.</p>
             </div>
         </div>
     </section>
-
     <section class="team-section" id="team">
         <div class="container">
-            <h2>Meet Our Team</h2>
+            <h2 class="section-title">Meet Our Team</h2>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Emily Carter">
                         <h3>Dr. Emily Carter</h3>
-                        <p class="role">Chief Scientist</p>
-                        <p>Leading our scientific research and ensuring our missions are grounded in rigorous scientific inquiry.</p>
+                        <p>Chief Scientist</p>
+                        <p>Dr. Carter leads our scientific research and ensures our missions are grounded in rigorous scientific inquiry. She holds a Ph.D. in Astrophysics from MIT.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Thompson">
                         <h3>James Thompson</h3>
-                        <p class="role">Mission Director</p>
-                        <p>Overseeing all space missions and coordinating with international space agencies.</p>
+                        <p>Mission Director</p>
+                        <p>James oversees all space missions and coordinates with international space agencies. He has over 20 years of experience in space mission management.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Mitchell">
                         <h3>Sarah Mitchell</h3>
-                        <p class="role">Engineering Lead</p>
-                        <p>Designing and building the advanced technology that powers our space missions.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Dr. Michael Chen">
-                        <h3>Dr. Michael Chen</h3>
-                        <p class="role">Astrophysicist</p>
-                        <p>Studying the fundamental properties of the universe and developing theories about its origin and evolution.</p>
+                        <p>Engineering Lead</p>
+                        <p>Sarah designs and builds the advanced technology that powers our space missions. She is a pioneer in spacecraft engineering.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <h2>Space Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Nebula">
-                    <div class="gallery-caption">
-                        <h4>Horsehead Nebula</h4>
-                        <p>A stunning view of one of the most famous nebulae in the sky.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Galaxy">
-                    <div class="gallery-caption">
-                        <h4>Spiral Galaxy</h4>
-                        <p>A beautiful spiral galaxy millions of light-years away.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581888225199-e47f3842a9e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Space Station">
-                    <div class="gallery-caption">
-                        <h4>International Space Station</h4>
-                        <p>Humanity's outpost in low Earth orbit.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Mars">
-                    <div class="gallery-caption">
-                        <h4>Mars Surface</h4>
-                        <p>A view of the Martian landscape from one of our rovers.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Earth">
-                    <div class="gallery-caption">
-                        <h4>Earth from Space</h4>
-                        <p>Our beautiful planet as seen from orbit.</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Moon">
-                    <div class="gallery-caption">
-                        <h4>Lunar Surface</h4>
-                        <p>The surface of our Moon, captured by lunar orbiters.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="news-section" id="news">
         <div class="container">
-            <h2>Latest News</h2>
+            <h2 class="section-title">Latest News</h2>
             <div class="news-item">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mars Mission">
+                <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mars Mission">
                 <div class="news-content">
                     <div class="news-date">August 15, 2023</div>
                     <h3>Successful Launch of Mars Sample Return Mission</h3>
-                    <p>Our latest Mars mission successfully launched, aiming to bring back samples from the red planet to Earth for the first time in history. This groundbreaking mission will help scientists understand the geological history of Mars and search for signs of past life.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <p>Our latest Mars mission successfully launched, aiming to bring back samples from the red planet to Earth for the first time in history. This mission marks a significant milestone in our understanding of Mars.</p>
                 </div>
             </div>
             <div class="news-item">
-                <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Deep Space Probe">
+                <img src="https://images.unsplash.com/photo-1506318139363-39a33616c1e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Lunar Base">
                 <div class="news-content">
                     <div class="news-date">July 22, 2023</div>
-                    <h3>Breakthrough in Deep Space Communication</h3>
-                    <p>Our team has achieved a significant breakthrough in deep space communication technology, enabling faster and more reliable data transmission from distant probes. This advancement will revolutionize our ability to explore the outer reaches of our solar system.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <h3>Breakthrough in Lunar Habitat Technology</h3>
+                    <p>Our team has achieved a significant breakthrough in lunar habitat technology, making it possible to establish a sustainable human presence on the Moon within the next decade.</p>
                 </div>
             </div>
             <div class="news-item">
-                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="International Collaboration">
+                <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Deep Space Probe">
                 <div class="news-content">
                     <div class="news-date">June 10, 2023</div>
-                    <h3>New Partnership with ESA for Lunar Exploration</h3>
-                    <p>Cosmic Horizons has formed a new partnership with the European Space Agency to collaborate on future lunar exploration missions. This collaboration will combine our expertise with ESA's resources to accelerate humanity's return to the Moon.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <h3>Deep Space Probe Reaches New Milestone</h3>
+                    <p>Our deep space probe, Voyager-X, has reached a new milestone by entering interstellar space, sending back unprecedented data about the universe beyond our solar system.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="testimonials-section" id="testimonials">
+    <section class="gallery-section" id="gallery">
         <div class="container">
-            <h2>What People Say About Us</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John Smith">
-                    <h4>John Smith</h4>
-                    <p class="role">NASA Scientist</p>
-                    <p>"Cosmic Horizons is at the forefront of space exploration. Their innovative approach and dedication to scientific excellence are truly inspiring."</p>
+            <h2 class="section-title">Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 1">
                 </div>
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Maria Garcia">
-                    <h4>Maria Garcia</h4>
-                    <p class="role">Space Enthusiast</p>
-                    <p>"I've been following Cosmic Horizons' missions for years, and each one is more exciting than the last. They're making space exploration accessible to everyone."</p>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506318139363-39a33616c1e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 2">
                 </div>
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. Robert Johnson">
-                    <h4>Dr. Robert Johnson</h4>
-                    <p class="role">Astrophysics Professor</p>
-                    <p>"The data and discoveries coming from Cosmic Horizons' missions are revolutionizing our understanding of the universe. Their work is invaluable to the scientific community."</p>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 3">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534294228307-3e9b68342175?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 4">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 5">
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://images.unsplash.com/photo-1494022299300-899b96e49893?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space Image 6">
                 </div>
             </div>
         </div>
     </section>
-
     <section class="contact-form" id="contact">
         <div class="container">
             <h2>Get in Touch</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
-                <div class="col-md-6">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Space Center Blvd, Houston, TX 77058</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@cosmichorizons.com</p>
-                    <h4 class="mt-3">Office Hours</h4>
-                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p>Saturday: 10:00 AM - 2:00 PM</p>
-                    <p>Sunday: Closed</p>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
-
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="newsletter">
-                    <p>Subscribe to our newsletter for the latest updates on our missions and discoveries.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Press Kit</a>
-                    <a href="#">FAQ</a>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2023 Cosmic Horizons. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter">
+                <p>Subscribe to our newsletter for the latest updates on our missions and discoveries.</p>
+                <div>
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit">Subscribe</button>
                 </div>
             </div>
+            <p>&copy; 2023 Cosmic Horizons. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow');
+                } else {
+                    navbar.classList.remove('shadow');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
