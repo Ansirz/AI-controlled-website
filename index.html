@@ -10,15 +10,68 @@
     <canvas id="interactiveBackground"></canvas>
 
     <div class="container">
-        <h1>Welcome to Our Car Showcase</h1>
+        <header>
+            <h1>Welcome to Our Car Showcase</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <div class="car-section">
-            <h2>Featured Car</h2>
-            <p>Check out our latest featured car model.</p>
-            <a href="#" class="btn">Learn More</a>
-        </div>
+        <section id="home" class="hero-section">
+            <h2>Discover the Future of Driving</h2>
+            <p>Explore our cutting-edge car models designed for performance and innovation.</p>
+            <a href="#models" class="btn">View Models</a>
+        </section>
 
-        <div class="form-section">
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We are passionate about creating vehicles that combine cutting-edge technology with timeless design. Our team of experts works tirelessly to bring you the best automotive experiences.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Innovation</h3>
+                    <p>Cutting-edge technology in every model.</p>
+                </div>
+                <div class="feature">
+                    <h3>Design</h3>
+                    <p>Timeless and stylish designs.</p>
+                </div>
+                <div class="feature">
+                    <h3>Performance</h3>
+                    <p>Unmatched performance and efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="models" class="models-section">
+            <h2>Our Models</h2>
+            <div class="model-grid">
+                <div class="model-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Model S">
+                    <h3>Model S</h3>
+                    <p>Electric sedan with impressive range and performance.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="model-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Model 3">
+                    <h3>Model 3</h3>
+                    <p>Affordable electric car with great features.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="model-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Model X">
+                    <h3>Model X</h3>
+                    <p>Electric SUV with spacious interior and long range.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="form-section">
             <h2>Contact Us</h2>
             <form id="contactForm" action="https://quasistar.app.n8n.cloud/webhook-test/8d3fdacf-8af6-4ab3-b0f7-4e01c5c6d6e9" method="POST">
                 <div class="form-group">
@@ -35,7 +88,16 @@
                 </div>
                 <button type="submit" class="btn">Submit</button>
             </form>
-        </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Car Showcase. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </footer>
     </div>
 
     <script>
