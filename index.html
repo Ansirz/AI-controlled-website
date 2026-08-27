@@ -3,334 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Exploration | Discover the Universe</title>
+    <title>Space Exploration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --dark-color: #0a0a1a;
-            --darker-color: #0f0f23;
-            --light-color: #f8f9fa;
-            --accent-color: #ff6b6b;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--darker-color);
+            background-color: #0f0f23;
             color: #fff;
-            line-height: 1.6;
         }
-        
         header {
-            background: linear-gradient(rgba(10, 10, 26, 0.9), rgba(10, 10, 26, 0.9)), url('https://images.pexels.com/photos/33441868/pexels-photo-33441868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-            background-size: cover;
-            background-position: center;
+            background-color: #0a0a1a;
             color: #fff;
-            padding: 4rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
         nav {
-            background-color: var(--dark-color);
+            background-color: #1a1a3a;
             padding: 0.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
-        
         nav a {
             color: #fff;
             text-decoration: none;
             padding: 0 1.5rem;
             font-weight: 500;
-            transition: color 0.3s;
         }
-        
         nav a:hover {
-            color: var(--primary-color);
+            text-decoration: underline;
         }
-        
         .hero {
             text-align: center;
             padding: 3rem 0;
+            background-color: #0f0f23;
             margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
         .hero p {
             font-size: 1.5rem;
             color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
         }
-        
-        .btn-custom {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .btn-custom:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #fff;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: #ccc;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
         .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
             padding: 3rem 0;
-            background-color: var(--dark-color);
+            background-color: #0a0a1a;
         }
-        
         .feature {
-            margin-bottom: 2rem;
+            flex: 1;
+            min-width: 300px;
+            margin: 1rem;
             padding: 1.5rem;
-            background-color: var(--darker-color);
+            background-color: #1a1a3a;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
         }
-        
         .feature:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
         }
-        
         .feature img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
             border-radius: 8px;
-            margin-bottom: 1rem;
         }
-        
-        .feature h3 {
-            margin-top: 1rem;
+        .feature h2 {
+            margin-top: 1.5rem;
             color: #fff;
-            font-size: 1.5rem;
         }
-        
         .feature p {
             color: #ccc;
         }
-        
-        .about {
-            padding: 3rem 0;
-            background-color: var(--darker-color);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .about-img {
-            flex: 1;
-        }
-        
-        .about-img img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        footer {
+            background-color: #0a0a1a;
             color: #fff;
-        }
-        
-        .about-text p {
-            color: #ccc;
-            margin-bottom: 1rem;
-        }
-        
-        .stats {
-            padding: 3rem 0;
-            background-color: var(--dark-color);
-        }
-        
-        .stat-card {
             text-align: center;
-            padding: 2rem;
-            background-color: var(--darker-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1.5rem;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
         }
-        
-        .stat-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .stat-card h3 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-card p {
-            color: #ccc;
-            margin: 0;
-        }
-        
         .contact-form {
-            max-width: 800px;
+            max-width: 600px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: var(--darker-color);
+            background-color: #1a1a3a;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        
         .contact-form h2 {
             margin-bottom: 1.5rem;
             color: #fff;
-            text-align: center;
         }
-        
         .contact-form .form-group {
             margin-bottom: 1.5rem;
         }
-        
         .contact-form label {
             display: block;
             margin-bottom: 0.5rem;
             color: #ccc;
         }
-        
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 0.75rem;
             border: 1px solid #333;
             border-radius: 4px;
             font-size: 1rem;
-            background-color: var(--dark-color);
+            background-color: #0f0f23;
             color: #fff;
         }
-        
         .contact-form button {
-            background-color: var(--primary-color);
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 4px;
             cursor: pointer;
             font-size: 1rem;
-            width: 100%;
-            transition: background-color 0.3s;
         }
-        
         .contact-form button:hover {
             background-color: #0056b3;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            padding: 0 1rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            padding: 0 1rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Cosmic Exploration</h1>
-            <p>Discover the wonders of the universe and beyond</p>
-            <a href="#contact" class="btn-custom">Get in Touch</a>
-        </div>
+        <h1>Space Exploration</h1>
     </header>
-    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -342,13 +148,10 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Explore</a>
+                        <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#stats">Stats</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -357,162 +160,50 @@
             </div>
         </div>
     </nav>
-
     <section class="hero" id="home">
         <div class="container">
-            <h1>Journey Through the Cosmos</h1>
-            <p>From distant galaxies to the mysteries of black holes, explore the infinite wonders of space with us.</p>
-            <a href="#features" class="btn-custom">Explore Now</a>
+            <h1>Welcome to the Cosmos</h1>
+            <p>Explore the wonders of space and the latest in space exploration technology.</p>
         </div>
     </section>
-
     <section class="features" id="features">
         <div class="container">
-            <div class="section-title">
-                <h2>Explore the Universe</h2>
-                <p>Discover the most fascinating phenomena in the cosmos through our curated collection of space exploration highlights.</p>
-            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature">
                         <img src="https://images.pexels.com/photos/33441868/pexels-photo-33441868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Cosmic Vortex">
-                        <h3>Galaxies</h3>
-                        <p>Billions of galaxies fill our universe, each containing billions of stars. Explore the spiral, elliptical, and irregular galaxies that make up our cosmic neighborhood.</p>
+                        <h2>Cosmic Wonders</h2>
+                        <p>Discover the mesmerizing beauty of cosmic vortices and celestial phenomena.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature">
                         <img src="https://images.pexels.com/photos/5069750/pexels-photo-5069750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Abstract Cosmic Scene">
-                        <h3>Nebulas</h3>
-                        <p>Nebulas are the birthplaces of stars. These stunning clouds of gas and dust create some of the most beautiful and colorful scenes in the universe.</p>
+                        <h2>Abstract Cosmic Scenes</h2>
+                        <p>Explore abstract representations of cosmic scenes with vibrant colors and shapes.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature">
                         <img src="https://images.pexels.com/photos/36633067/pexels-photo-36633067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Starry Night Sky">
-                        <h3>Stars</h3>
-                        <p>Stars come in all sizes and colors, from tiny red dwarfs to massive blue supergiants. Learn about the life cycle of stars and their role in the universe.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Planet">
-                        <h3>Planets</h3>
-                        <p>From rocky worlds like Earth to gas giants like Jupiter, planets come in a variety of forms. Explore the diverse planetary systems in our galaxy.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Moon">
-                        <h3>Moons</h3>
-                        <p>Moons are natural satellites that orbit planets. Some, like Earth's Moon, are barren and lifeless, while others may harbor hidden oceans or even life.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="https://images.pexels.com/photos/2156/spacex-launch-vehicle-rocket-takeoff.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Spacecraft">
-                        <h3>Spacecraft</h3>
-                        <p>Humanity's journey into space has been made possible by incredible spacecraft. Learn about the missions that have expanded our understanding of the cosmos.</p>
+                        <h2>Starry Night Sky</h2>
+                        <p>Experience the breathtaking view of a starry night sky featuring the Milky Way galaxy.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Cosmic Exploration</h2>
-                <p>We are dedicated to bringing the wonders of the universe closer to you. Our mission is to inspire curiosity and foster a deeper understanding of the cosmos.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.pexels.com/photos/36633067/pexels-photo-36633067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Space Exploration">
-                </div>
-                <div class="about-text">
-                    <h2>Our Mission</h2>
-                    <p>At Cosmic Exploration, we believe that the universe is a place of endless wonder and discovery. Our team of passionate astronomers, scientists, and educators work tirelessly to bring you the latest news, images, and insights from the world of space exploration.</p>
-                    <p>From the latest discoveries in astrophysics to the history of space exploration, we cover it all. Our goal is to make the complexities of the universe accessible to everyone, regardless of their background or knowledge level.</p>
-                    <p>Join us on this incredible journey as we explore the cosmos together.</p>
-                    <a href="#contact" class="btn-custom">Join Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats" id="stats">
-        <div class="container">
-            <div class="section-title">
-                <h2>Space Facts</h2>
-                <p>Some mind-blowing statistics about our universe.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-globe"></i>
-                        <h3>200B+</h3>
-                        <p>Galaxies in the Observable Universe</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-star"></i>
-                        <h3>100B+</h3>
-                        <p>Stars in the Milky Way</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-satellite"></i>
-                        <h3>5,000+</h3>
-                        <p>Exoplanets Discovered</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>12</h3>
-                        <p>Humans on the Moon</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-form" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Have questions or want to learn more? Reach out to us!</p>
-            </div>
+            <h2>Contact Us</h2>
             <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">First Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="lastname">Last Name</label>
-                            <input type="text" id="lastname" name="lastname" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="support">Support</option>
-                        <option value="collaboration">Collaboration</option>
-                    </select>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -522,26 +213,11 @@
             </form>
         </div>
     </section>
-
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-            </div>
-            <p>&copy; 2023 Cosmic Exploration. All rights reserved.</p>
+            <p>&copy; 2023 Space Exploration. All rights reserved.</p>
         </div>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
