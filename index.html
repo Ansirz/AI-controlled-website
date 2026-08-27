@@ -38,6 +38,62 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('interactiveBackground');
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas to full window size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Create particles
+            const particles = [];
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 3 + 1,
+                    dx: Math.random() * 2 - 1,
+                    dy: Math.random() * 2 - 1,
+                    color: `rgba(0, 100, 255, ${Math.random() * 0.5 + 0.5})`
+                });
+            }
+
+            // Animation function
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Update and draw particles
+                particles.forEach(particle => {
+                    particle.x += particle.dx;
+                    particle.y += particle.dy;
+
+                    // Bounce off edges
+                    if (particle.x < 0 || particle.x > canvas.width) particle.dx = -particle.dx;
+                    if (particle.y < 0 || particle.y > canvas.height) particle.dy = -particle.dy;
+
+                    // Draw particle
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = particle.color;
+                    ctx.fill();
+                    ctx.closePath();
+                });
+            }
+
+            // Start animation
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
 </body>
 </html>
