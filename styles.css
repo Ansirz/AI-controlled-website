@@ -3,7 +3,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #000000;
-  color: #39ff14;
+  color: #39ff14; /* Neon Green */
   font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
