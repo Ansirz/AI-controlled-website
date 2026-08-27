@@ -9,8 +9,10 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             overflow-x: hidden;
+            background-color: #111;
+            color: #0ff;
         }
 
         #interactiveBackground {
@@ -25,11 +27,12 @@
         .container {
             position: relative;
             z-index: 1;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(20, 20, 30, 0.8);
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border: 1px solid #0ff;
         }
 
         header {
@@ -37,7 +40,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #0ff;
         }
 
         nav ul {
@@ -51,7 +54,13 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #0ff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
         }
 
         .hero-section {
@@ -62,11 +71,17 @@
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
+            background-color: #0ff;
+            color: #111;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #fff;
         }
 
         .about-section {
@@ -83,9 +98,10 @@
             flex: 1;
             padding: 20px;
             margin: 0 10px;
-            background-color: #f9f9f9;
+            background-color: rgba(20, 20, 30, 0.8);
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            border: 1px solid #0ff;
         }
 
         .models-section {
@@ -102,15 +118,17 @@
             width: 30%;
             padding: 20px;
             margin: 10px 0;
-            background-color: #f9f9f9;
+            background-color: rgba(20, 20, 30, 0.8);
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
             text-align: center;
+            border: 1px solid #0ff;
         }
 
         .model-card img {
             width: 100%;
             border-radius: 5px;
+            border: 1px solid #0ff;
         }
 
         .form-section {
@@ -124,20 +142,23 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
+            color: #0ff;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #0ff;
             border-radius: 5px;
+            background-color: rgba(20, 20, 30, 0.8);
+            color: #0ff;
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #0ff;
         }
 
         .social-links {
@@ -147,7 +168,13 @@
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
-            color: #333;
+            color: #0ff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
         }
     </style>
 </head>
@@ -265,7 +292,7 @@
                     radius: Math.random() * 3 + 1,
                     dx: Math.random() * 2 - 1,
                     dy: Math.random() * 2 - 1,
-                    color: `rgba(0, 100, 255, ${Math.random() * 0.5 + 0.5})`
+                    color: `rgba(0, 255, 255, ${Math.random() * 0.5 + 0.5})`
                 });
             }
 
