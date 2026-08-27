@@ -1,27 +1,79 @@
-/* Black background with neon green accents */
 body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background-color: #000000; /* Black */
-  color: #39ff14; /* Neon green */
-  font-family: 'Courier New', Courier, monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  color: #39ff14;
-  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-p {
-  font-size: 1.5rem;
-  color: #ffffff; /* White for readability */
-  text-shadow: 0 0 5px #39ff14;
+h1, h2 {
+  color: #2c3e50;
+}
+
+.car-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.form-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
 }
