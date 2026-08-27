@@ -32,30 +32,23 @@
       color: #ffffff;
     }
 
-    section {
+    .car-section {
       margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #39ff14;
+      border-radius: 5px;
       max-width: 600px;
     }
 
-    h2 {
+    .car-section h2 {
       color: #39ff14;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px #39ff14;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    img {
-      width: 100%;
-      height: auto;
-      border: 3px solid #39ff14;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #39ff14;
-    }
-
-    .car-desc {
+    .car-section p {
       font-size: 1.2rem;
-      color: #ffffff;
-      margin-top: 0.5rem;
+      color: #cccccc;
     }
   </style>
 </head>
@@ -66,10 +59,12 @@
     Tell it what to change, and it will edit this HTML for you.
   </p>
 
-  <section>
-    <h2>Car Showcase</h2>
-    <img src="https://via.placeholder.com/600x300?text=Car" alt="Car Image">
-    <p class="car-desc">A sleek, futuristic car that combines cutting‑edge design with high performance. Perfect for the tech enthusiast.</p>
-  </section>
+  <div class="car-section">
+    <h2>Car Spotlight</h2>
+    <p>
+      The Tesla Model S Plaid is one of the fastest production cars in the world, with a 0-60 mph time of just 1.99 seconds.
+      It features a tri-motor all-wheel-drive system and can travel up to 396 miles on a single charge.
+    </p>
+  </div>
 </body>
 </html>
