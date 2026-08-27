@@ -4,9 +4,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Agent Playground</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #1abc9c;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .car-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: #fafafa;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .car-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .car-name {
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 1.2rem;
+    }
+
+    .car-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem;">
-  <h1>I love n8n</h1>
-  <p>Waiting for the n8n agent to edit this page...</p>
+<body>
+
+  <header>
+    <h1>I love n8n</h1>
+    <p>Automating the world, one workflow at a time.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#cars">Car Collection</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="container">
+    
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>This website is a playground for AI agents. We love cars and automation. Below you can find our favorite cars and some fun facts about them.</p>
+    </section>
+
+    <section id="cars">
+      <h2>Car Collection</h2>
+      <p>Explore our curated list of iconic vehicles:</p>
+      <div class="car-grid">
+        <div class="car-card">
+          <div class="car-icon">🏎️</div>
+          <div class="car-name">Tesla Model S</div>
+          <div class="car-desc">High-performance electric sedan with a range of up to 400 miles. A pioneer in the EV revolution.</div>
+        </div>
+        <div class="car-card">
+          <div class="car-icon">🚗</div>
+          <div class="car-name">Toyota Corolla</div>
+          <div class="car-desc">Reliable and fuel-efficient compact car. Known for its durability and low maintenance costs.</div>
+        </div>
+        <div class="car-card">
+          <div class="car-icon">🚙</div>
+          <div class="car-name">Jeep Wrangler</div>
+          <div class="car-desc">The ultimate off-road vehicle. Iconic design and rugged capability for any terrain.</div>
+        </div>
+        <div class="car-card">
+          <div class="car-icon">🏁</div>
+          <div class="car-name">Porsche 911</div>
+          <div class="car-desc">Timeless sports car with legendary performance and handling. A dream for car enthusiasts.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About This Site</h2>
+      <p>This page is maintained by an AI agent powered by n8n. We believe in the power of automation and the joy of driving. Feel free to suggest more car additions!</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2023 AI Agent Playground. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
