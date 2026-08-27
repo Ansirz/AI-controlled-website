@@ -32,29 +32,30 @@
       color: #ffffff;
     }
 
-    .car-section {
+    section {
       margin-top: 2rem;
-      max-width: 90%;
+      max-width: 600px;
     }
 
-    .car-section h2 {
+    h2 {
+      color: #39ff14;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #ff073a; /* Neon red for contrast */
-      text-shadow: 0 0 8px #ff073a;
+      text-shadow: 0 0 10px #39ff14;
     }
 
-    .car-section img {
-      width: 300px;
+    img {
+      width: 100%;
+      height: auto;
       border: 3px solid #39ff14;
+      border-radius: 8px;
       box-shadow: 0 0 15px #39ff14;
-      margin-bottom: 0.5rem;
     }
 
-    .car-section p {
+    .car-desc {
       font-size: 1.2rem;
-      color: #dddddd;
-      text-shadow: none;
+      color: #ffffff;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -64,10 +65,11 @@
     This website is controlled by an AI agent.<br />
     Tell it what to change, and it will edit this HTML for you.
   </p>
-  <div class="car-section">
-    <h2>Neon Car Spotlight</h2>
-    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Neon Car" />
-    <p>Check out this sleek electric car glowing under the city lights. Future meets style.</p>
-  </div>
+
+  <section>
+    <h2>Car Showcase</h2>
+    <img src="https://via.placeholder.com/600x300?text=Car" alt="Car Image">
+    <p class="car-desc">A sleek, futuristic car that combines cutting‑edge design with high performance. Perfect for the tech enthusiast.</p>
+  </section>
 </body>
 </html>
