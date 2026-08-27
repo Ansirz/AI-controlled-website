@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Controlled Website</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showcase</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>I love n8n</h1>
-    <p>
-      This website is controlled by an AI agent.<br />
-      Tell it what to change, and it will edit this HTML for you.
-    </p>
+    <div class="container">
+        <h1>Welcome to Our Car Showcase</h1>
 
-    <div class="car-section">
-      <h2>Car Spotlight</h2>
-      <p>
-        The Tesla Model S Plaid is one of the fastest production cars in the world, with a 0-60 mph time of just 1.99 seconds.
-        It features a tri-motor all-wheel-drive system and can travel up to 396 miles on a single charge.
-      </p>
-      <a href="#" class="btn">Learn More</a>
+        <div class="car-section">
+            <h2>Featured Car</h2>
+            <p>Check out our latest featured car model.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="form-section">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div class="form-section">
-      <h2>Contact Us</h2>
-      <form action="#" method="POST">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </div>
-  </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
 </body>
 </html>
