@@ -4,7 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Controlled Website</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #000000;
+      color: #39ff14; /* Neon Green */
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+      color: #39ff14;
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-shadow: 0 0 5px #39ff14;
+      color: #ffffff;
+    }
+
+    .car-section {
+      margin-top: 2rem;
+      max-width: 90%;
+    }
+
+    .car-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #ff073a; /* Neon red for contrast */
+      text-shadow: 0 0 8px #ff073a;
+    }
+
+    .car-section img {
+      width: 300px;
+      border: 3px solid #39ff14;
+      box-shadow: 0 0 15px #39ff14;
+      margin-bottom: 0.5rem;
+    }
+
+    .car-section p {
+      font-size: 1.2rem;
+      color: #dddddd;
+      text-shadow: none;
+    }
+  </style>
 </head>
 <body>
   <h1>I love n8n</h1>
@@ -12,5 +64,10 @@
     This website is controlled by an AI agent.<br />
     Tell it what to change, and it will edit this HTML for you.
   </p>
+  <div class="car-section">
+    <h2>Neon Car Spotlight</h2>
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Neon Car" />
+    <p>Check out this sleek electric car glowing under the city lights. Future meets style.</p>
+  </div>
 </body>
 </html>
