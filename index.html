@@ -3,369 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Showcase</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Electric Vehicles</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            background-color: #111;
-            color: #0ff;
+            background-color: #f4f4f4;
         }
-
-        #interactiveBackground {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            background-color: rgba(20, 20, 30, 0.5);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            border: 1px solid #0ff;
-            width: calc(100% - 40px);
-            min-height: calc(100vh - 40px);
-        }
-
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #0ff;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #0ff;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
+            background-color: #333;
             color: #fff;
-        }
-
-        .hero-section {
+            padding: 1rem 0;
             text-align: center;
-            padding: 50px 0;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #0ff;
-            color: #111;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            padding: 0 1rem;
         }
-
-        .btn:hover {
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
             background-color: #fff;
+            margin-bottom: 2rem;
         }
-
-        .about-section {
-            padding: 50px 0;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+        }
         .features {
             display: flex;
             justify-content: space-around;
-            margin-top: 30px;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            background-color: #f9f9f9;
         }
-
         .feature {
             flex: 1;
-            padding: 20px;
-            margin: 0 10px;
-            background-color: rgba(20, 20, 30, 0.5);
+            min-width: 300px;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #fff;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-            border: 1px solid #0ff;
-        }
-
-        .models-section {
-            padding: 50px 0;
-        }
-
-        .model-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .model-card {
-            width: 30%;
-            padding: 20px;
-            margin: 10px 0;
-            background-color: rgba(20, 20, 30, 0.5);
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border: 1px solid #0ff;
         }
-
-        .model-card img {
+        .feature img {
             width: 100%;
+            height: auto;
             border-radius: 5px;
-            border: 1px solid #0ff;
         }
-
-        .form-section {
-            padding: 50px 0;
-            background-color: transparent;
+        .feature h2 {
+            margin-top: 1rem;
         }
-
-        .form-group {
-            margin-bottom: 15px;
+        .feature p {
+            color: #666;
         }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #0ff;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #0ff;
-            border-radius: 5px;
-            background-color: transparent;
-            color: #0ff;
-            font-size: 16px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-        }
-
         footer {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #0ff;
-        }
-
-        .social-links {
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #0ff;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
+            background-color: #333;
             color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-    <canvas id="interactiveBackground"></canvas>
-
-    <div class="container">
-        <header>
-            <h1>Welcome to Our Car Showcase</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#models">Models</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section id="home" class="hero-section">
-            <h2>Discover the Future of Driving</h2>
-            <p>Explore our cutting-edge car models designed for performance and innovation.</p>
-            <a href="#models" class="btn">View Models</a>
-        </section>
-
-        <section id="about" class="about-section">
-            <h2>About Us</h2>
-            <p>We are passionate about creating vehicles that combine cutting-edge technology with timeless design. Our team of experts works tirelessly to bring you the best automotive experiences.</p>
-            <div class="features">
-                <div class="feature">
-                    <h3>Innovation</h3>
-                    <p>Cutting-edge technology in every model.</p>
-                </div>
-                <div class="feature">
-                    <h3>Design</h3>
-                    <p>Timeless and stylish designs.</p>
-                </div>
-                <div class="feature">
-                    <h3>Performance</h3>
-                    <p>Unmatched performance and efficiency.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="models" class="models-section">
-            <h2>Our Models</h2>
-            <div class="model-grid">
-                <div class="model-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Model S">
-                    <h3>Model S</h3>
-                    <p>Electric sedan with impressive range and performance.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                <div class="model-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Model 3">
-                    <h3>Model 3</h3>
-                    <p>Affordable electric car with great features.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-                <div class="model-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Model X">
-                    <h3>Model X</h3>
-                    <p>Electric SUV with spacious interior and long range.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="form-section">
-            <h2>Contact Us</h2>
-            <form id="contactForm" action="https://quasistar.app.n8n.cloud/webhook-test/8d3fdacf-8af6-4ab3-b0f7-4e01c5c6d6e9" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </section>
-
-        <footer>
-            <p>&copy; 2023 Car Showcase. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const canvas = document.getElementById('interactiveBackground');
-            const ctx = canvas.getContext('2d');
-
-            // Set canvas to full window size
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            // Create particles
-            const particles = [];
-            const particleCount = 50;
-
-            // Color palette
-            const colors = [
-                '#0ff',
-                '#f0f',
-                '#ff0',
-                '#0f0',
-                '#f00'
-            ];
-
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 3 + 1,
-                    dx: Math.random() * 2 - 1,
-                    dy: Math.random() * 2 - 1,
-                    color: colors[Math.floor(Math.random() * colors.length)]
-                });
-            }
-
-            // Animation function
-            function animate() {
-                requestAnimationFrame(animate);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                // Update and draw particles
-                particles.forEach(particle => {
-                    particle.x += particle.dx;
-                    particle.y += particle.dy;
-
-                    // Bounce off edges
-                    if (particle.x < 0 || particle.x > canvas.width) particle.dx = -particle.dx;
-                    if (particle.y < 0 || particle.y > canvas.height) particle.dy = -particle.dy;
-
-                    // Draw particle
-                    ctx.beginPath();
-                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = particle.color;
-                    ctx.fill();
-                    ctx.closePath();
-                });
-            }
-
-            // Start animation
-            animate();
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-
-            // Handle mouse movement
-            canvas.addEventListener('mousemove', function(e) {
-                const mouseX = e.clientX;
-                const mouseY = e.clientY;
-
-                particles.forEach(particle => {
-                    const dx = mouseX - particle.x;
-                    const dy = mouseY - particle.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 100) {
-                        particle.dx = dx * 0.01;
-                        particle.dy = dy * 0.01;
-                    }
-                });
-            });
-        });
-    </script>
+    <header>
+        <h1>Electric Vehicles</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero">
+        <h1>Welcome to the Future of Transportation</h1>
+        <p>Explore the latest in electric vehicles and how they are revolutionizing the way we travel.</p>
+    </section>
+    <section class="features" id="features">
+        <div class="feature">
+            <img src="https://images.pexels.com/photos/5158188/pexels-photo-5158188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Electric Car">
+            <h2>Efficiency</h2>
+            <p>Electric vehicles are more efficient than traditional gasoline-powered cars, providing better mileage and lower operating costs.</p>
+        </div>
+        <div class="feature">
+            <img src="https://images.pexels.com/photos/31867049/pexels-photo-31867049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Electric Car">
+            <h2>Environmentally Friendly</h2>
+            <p>By choosing an electric vehicle, you are reducing your carbon footprint and contributing to a cleaner environment.</p>
+        </div>
+        <div class="feature">
+            <img src="https://images.pexels.com/photos/16896042/pexels-photo-16896042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Electric Car">
+            <h2>Innovation</h2>
+            <p>Electric vehicles are at the forefront of automotive innovation, with new technologies and features being developed all the time.</p>
+        </div>
+        <div class="feature">
+            <img src="https://images.pexels.com/photos/36542646/pexels-photo-36542646.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Electric Car">
+            <h2>Innovation</h2>
+            <p>Electric vehicles are at the forefront of automotive innovation, with new technologies and features being developed all the time.</p>
+        </div>
+        <div class="feature">
+            <img src="https://images.pexels.com/photos/16896019/pexels-photo-16896019.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Electric Car">
+            <h2>Innovation</h2>
+            <p>Electric vehicles are at the forefront of automotive innovation, with new technologies and features being developed all the time.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Electric Vehicles. All rights reserved.</p>
+    </footer>
 </body>
 </html>
