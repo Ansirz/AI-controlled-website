@@ -5,6 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Showcase</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        #interactiveBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .about-section {
+            padding: 50px 0;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .feature {
+            flex: 1;
+            padding: 20px;
+            margin: 0 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .models-section {
+            padding: 50px 0;
+        }
+
+        .model-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .model-card {
+            width: 30%;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .model-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .form-section {
+            padding: 50px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <canvas id="interactiveBackground"></canvas>
