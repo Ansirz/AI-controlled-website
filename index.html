@@ -18,7 +18,7 @@
 
         <div class="form-section">
             <h2>Contact Us</h2>
-            <form id="contactForm">
+            <form id="contactForm" action="https://quasistar.app.n8n.cloud/webhook-test/8d3fdacf-8af6-4ab3-b0f7-4e01c5c6d6e9" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -39,7 +39,19 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Form submitted!');
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Form submitted successfully!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting the form.');
+            });
         });
     </script>
 </body>
