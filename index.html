@@ -6,151 +6,163 @@
     <title>Sweet Delights Bakery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff9a9e;
-            --secondary-color: #fad0c4;
-            --accent-color: #fbc2eb;
-            --dark-color: #555;
-            --light-color: #fff;
+            --primary-color: #d4a574;
+            --secondary-color: #f8e8e8;
+            --accent-color: #e67e22;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            color: var(--dark-color);
-            line-height: 1.6;
-            background-color: #fff8f0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
         }
         header {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            padding: 1.5rem 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            animation: fadeInDown 1s ease-out;
+        }
+        header p {
+            font-size: 1.2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
         nav {
-            background-color: var(--secondary-color);
-            padding: 0.5rem 0;
+            background-color: var(--dark-color);
+            padding: 1rem 0;
         }
         nav a {
-            color: var(--dark-color);
+            color: white;
             text-decoration: none;
             padding: 0.5rem 1rem;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
         }
         nav a:hover {
-            color: var(--primary-color);
-            transform: scale(1.1);
+            background-color: var(--accent-color);
+            border-radius: 4px;
         }
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             text-align: center;
             padding: 6rem 0;
-            color: var(--dark-color);
+            color: white;
         }
         .hero h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
-            animation: fadeInDown 1.5s ease-in-out;
+            animation: slideInDown 1s ease-out;
         }
         .hero p {
             font-size: 1.5rem;
             max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1.5s ease-in-out;
+            margin: 0 auto 2rem;
+            animation: slideInUp 1s ease-out 0.2s both;
         }
         .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            transition: all 0.3s;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
         }
         .btn-primary:hover {
-            background-color: #ff7a7e;
-            border-color: #ff7a7e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
-        }
-        .features {
-            padding: 3rem 0;
-            background-color: var(--light-color);
+            background-color: #c06c18;
+            border-color: #c06c18;
         }
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-        }
-        .section-title h2 {
-            font-family: 'Pacifico', cursive;
             font-size: 2.5rem;
-            color: var(--primary-color);
-        }
-        .section-title p {
             color: var(--dark-color);
+            position: relative;
+            display: inline-block;
         }
-        .feature-card {
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .products {
+            padding: 3rem 0;
             background-color: var(--light-color);
+        }
+        .product-card {
+            background-color: white;
             border-radius: 10px;
-            padding: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .feature-card:hover {
+        .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .feature-card img {
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        .product-img img {
             width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            transition: transform 0.3s;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
-        .feature-card:hover img {
+        .product-card:hover .product-img img {
             transform: scale(1.05);
         }
-        .feature-card h3 {
-            color: var(--primary-color);
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        .product-info p {
+            color: #666;
             margin-bottom: 1rem;
         }
-        .feature-card p {
-            color: var(--dark-color);
+        .product-price {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
         }
         .about-section {
             padding: 3rem 0;
-            background-color: var(--secondary-color);
+            text-align: center;
         }
         .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-        .about-text {
-            flex: 1;
-        }
-        .about-image {
-            flex: 1;
-        }
-        .about-image img {
-            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 2rem;
+            background-color: var(--secondary-color);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
         .team-section {
             padding: 3rem 0;
@@ -159,102 +171,118 @@
         .team-member {
             text-align: center;
             margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
         }
         .team-member img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--primary-color);
+            border: 5px solid var(--primary-color);
             margin-bottom: 1rem;
-            transition: transform 0.3s;
+            transition: transform 0.5s;
         }
         .team-member:hover img {
-            transform: scale(1.1);
+            transform: rotate(15deg);
         }
         .team-member h3 {
-            color: var(--primary-color);
+            color: var(--dark-color);
             margin-bottom: 0.5rem;
         }
         .team-member p {
-            color: var(--dark-color);
+            color: #666;
         }
-        .menu-section {
+        .testimonials {
             padding: 3rem 0;
-            background-color: var(--accent-color);
-        }
-        .menu-item {
-            display: flex;
-            margin-bottom: 2rem;
-            background-color: var(--light-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        .menu-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        .menu-item img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-right: 1.5rem;
-        }
-        .menu-details h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .menu-details p {
-            color: var(--dark-color);
-        }
-        .price {
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .testimonials-section {
-            padding: 3rem 0;
-            background-color: var(--light-color);
         }
         .testimonial {
             background-color: var(--secondary-color);
+            padding: 2rem;
             border-radius: 10px;
-            padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-        .testimonial img {
-            width: 80px;
-            height: 80px;
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: serif;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
+            margin-right: 1rem;
         }
-        .testimonial h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .testimonial p {
+        .testimonial-author-info h4 {
             color: var(--dark-color);
-            font-style: italic;
+            margin-bottom: 0.25rem;
+        }
+        .testimonial-author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .gallery {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
         }
         .contact-form {
             max-width: 600px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: var(--light-color);
+            background-color: var(--secondary-color);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .contact-form h2 {
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--dark-color);
             text-align: center;
-            font-family: 'Pacifico', cursive;
         }
         .contact-form .form-group {
             margin-bottom: 1.5rem;
@@ -263,6 +291,7 @@
             display: block;
             margin-bottom: 0.5rem;
             color: var(--dark-color);
+            font-weight: 500;
         }
         .contact-form input, .contact-form textarea {
             width: 100%;
@@ -272,24 +301,22 @@
             font-size: 1rem;
         }
         .contact-form button {
-            background-color: var(--primary-color);
-            color: #fff;
+            background-color: var(--accent-color);
+            color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 2rem;
             border-radius: 4px;
             cursor: pointer;
             font-size: 1rem;
             width: 100%;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
         }
         .contact-form button:hover {
-            background-color: #ff7a7e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+            background-color: #c06c18;
         }
         footer {
             background-color: var(--dark-color);
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 2rem 0;
         }
@@ -297,36 +324,20 @@
             margin: 1rem 0;
         }
         .social-icons a {
-            color: #fff;
+            color: white;
             margin: 0 0.5rem;
             font-size: 1.5rem;
-            transition: all 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
         .social-icons a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
+            color: var(--accent-color);
+            transform: translateY(-3px);
         }
-        .newsletter {
+        .opening-hours {
             margin-top: 1rem;
         }
-        .newsletter input {
-            padding: 0.5rem;
-            border-radius: 4px 0 0 4px;
-            border: none;
-            width: 70%;
-            display: inline-block;
-        }
-        .newsletter button {
-            background-color: var(--primary-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .newsletter button:hover {
-            background-color: #ff7a7e;
-            transform: scale(1.05);
+        .opening-hours p {
+            margin-bottom: 0.5rem;
         }
         @keyframes fadeInDown {
             from {
@@ -348,32 +359,47 @@
                 transform: translateY(0);
             }
         }
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         @media (max-width: 768px) {
-            .hero h1 {
+            header h1, .hero h1 {
                 font-size: 2.5rem;
             }
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
-            .about-content {
-                flex-direction: column;
-            }
-            .menu-item {
-                flex-direction: column;
-            }
-            .menu-item img {
-                margin-right: 0;
-                margin-bottom: 1rem;
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Sweet Delights Bakery</h1>
-        <p>Where Every Bite is a Celebration</p>
+        <div class="container">
+            <h1>Sweet Delights Bakery</h1>
+            <p>Where Every Bite Tells a Story</p>
+        </div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -384,16 +410,19 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link" href="#products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
+                        <a class="nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#team">Our Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -404,37 +433,85 @@
     </nav>
     <section class="hero" id="home">
         <div class="container">
-            <h1>Indulge in Sweet Perfection</h1>
-            <p>From artisanal bread to decadent pastries, our bakery offers a delightful array of treats baked with love and passion.</p>
-            <a href="#menu" class="btn btn-primary btn-lg mt-3">View Our Menu</a>
+            <h1>Freshly Baked Goodness Daily</h1>
+            <p>At Sweet Delights Bakery, we take pride in crafting each pastry, bread, and cake with love and care. Our recipes have been perfected over generations, ensuring every bite is a delightful experience.</p>
+            <a href="#products" class="btn btn-primary btn-lg">View Our Menu</a>
         </div>
     </section>
-    <section class="features" id="features">
+    <section class="products" id="products">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>Discover what makes Sweet Delights Bakery special</p>
-            </div>
+            <h2 class="section-title">Our Delicious Offerings</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fresh Ingredients">
-                        <h3>Fresh Ingredients</h3>
-                        <p>We use only the freshest and highest quality ingredients to ensure every bite is as delicious as it looks.</p>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1560008581-055e90dff0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Croissants">
+                        </div>
+                        <div class="product-info">
+                            <h3>Flaky Croissants</h3>
+                            <p>Layers of buttery goodness that melt in your mouth. Perfect for breakfast or a snack.</p>
+                            <div class="product-price">$4.99</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1517433670263-9e8a8fe7cc53?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Artisanal Craftsmanship">
-                        <h3>Artisanal Craftsmanship</h3>
-                        <p>Our skilled bakers bring years of experience and passion to every creation, ensuring perfection in every treat.</p>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1580894732444-89b03727078a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Scones">
+                        </div>
+                        <div class="product-info">
+                            <h3>Classic Scones</h3>
+                            <p>Warm, tender, and served with clotted cream and jam. A true British classic.</p>
+                            <div class="product-price">$3.99</div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Custom Cakes">
-                        <h3>Custom Cakes</h3>
-                        <p>Celebrate your special occasions with our custom-designed cakes, tailored to your unique vision and taste.</p>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1563453388873-6eee28b41b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cupcakes">
+                        </div>
+                        <div class="product-info">
+                            <h3>Assorted Cupcakes</h3>
+                            <p>Mini cakes with a variety of flavors and frostings. Perfect for any occasion.</p>
+                            <div class="product-price">$2.50 each</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56d49c79e82b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bread">
+                        </div>
+                        <div class="product-info">
+                            <h3>Artisan Bread</h3>
+                            <p>Freshly baked bread with a crispy crust and soft interior. Made with the finest ingredients.</p>
+                            <div class="product-price">$5.99</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cookies">
+                        </div>
+                        <div class="product-info">
+                            <h3>Chocolate Chip Cookies</h3>
+                            <p>Homemade cookies with gooey chocolate chips. Perfect with a glass of milk.</p>
+                            <div class="product-price">$2.99 per dozen</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cakes">
+                        </div>
+                        <div class="product-info">
+                            <h3>Custom Cakes</h3>
+                            <p>Beautifully decorated cakes for any celebration. Custom designs available.</p>
+                            <div class="product-price">$45.00+</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,149 +519,168 @@
     </section>
     <section class="about-section" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Story</h2>
-                <p>Learn about our journey and passion for baking</p>
-            </div>
+            <h2 class="section-title">About Sweet Delights Bakery</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Founded in 2010, Sweet Delights Bakery started as a small family-owned business with a passion for creating delicious, high-quality baked goods. Over the years, we have grown into a beloved local bakery, known for our commitment to using the finest ingredients and traditional baking techniques.</p>
-                    <p>Our mission is simple: to bring joy and sweetness to every moment of your life. Whether it's a special occasion or just a regular day, our treats are designed to make every day a little sweeter.</p>
-                    <p>We believe in the power of baking to bring people together. Every cake, cookie, and pastry we create is made with love, care, and a dedication to excellence.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Our Bakery">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="menu-section" id="menu">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Menu</h2>
-                <p>Explore our delicious offerings</p>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Chocolate Cake">
-                <div class="menu-details">
-                    <h3>Chocolate Fudge Cake</h3>
-                    <p>A rich and decadent chocolate cake with layers of creamy fudge frosting. Perfect for chocolate lovers!</p>
-                    <div class="price">$25.99</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Croissants">
-                <div class="menu-details">
-                    <h3>Buttery Croissants</h3>
-                    <p>Flaky, golden croissants made with the finest butter. A classic French pastry that's perfect for breakfast or a snack.</p>
-                    <div class="price">$3.99 each</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1517433670263-9e8a8fe7cc53?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Artisan Bread">
-                <div class="menu-details">
-                    <h3>Artisan Sourdough Bread</h3>
-                    <p>Handcrafted sourdough bread with a crisp crust and soft, tangy interior. Baked to perfection every day.</p>
-                    <div class="price">$6.99</div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cupcakes">
-                <div class="menu-details">
-                    <h3>Assorted Cupcakes</h3>
-                    <p>A dozen of our most popular cupcakes, each with its own unique flavor and decoration. Perfect for parties!</p>
-                    <div class="price">$24.99</div>
-                </div>
+                <p><strong>Our Story:</strong></p>
+                <p>Sweet Delights Bakery was founded in 1998 by our beloved grandmother, who had a passion for baking. What started as a small kitchen operation has grown into a beloved bakery serving the community with freshly baked goods every day.</p>
+                <p>We believe that baking is not just about creating delicious treats; it's about bringing joy and warmth to people's lives. Each recipe we bake is crafted with care and a touch of love, ensuring that every customer leaves our bakery with a smile on their face.</p>
+                <p><strong>Our Commitment:</strong></p>
+                <p>At Sweet Delights Bakery, we are committed to using only the finest ingredients. We source our butter, flour, and other essentials from trusted local suppliers to ensure the highest quality in every product. Our dedication to quality and tradition has earned us a loyal customer base and a reputation for excellence in the community.</p>
             </div>
         </div>
     </section>
     <section class="team-section" id="team">
         <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Team</h2>
-                <p>Get to know the faces behind Sweet Delights Bakery</p>
-            </div>
+            <h2 class="section-title">Meet Our Baking Team</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Johnson">
-                        <h3>Emma Johnson</h3>
-                        <p>Head Baker</p>
-                        <p>Emma brings over 15 years of baking experience and a passion for creating delicious treats that bring joy to our customers.</p>
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Baker">
+                        <h3>Emma Baker</h3>
+                        <p>Head Baker & Founder</p>
+                        <p>With over 25 years of experience, Emma is the heart and soul of Sweet Delights Bakery. She's the mastermind behind our famous recipes and the driving force behind our success.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Smith">
-                        <h3>Michael Smith</h3>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Croissant">
+                        <h3>Michael Croissant</h3>
                         <p>Pastry Chef</p>
-                        <p>Michael's artistic touch and attention to detail make our pastries and cakes true works of edible art.</p>
+                        <p>Michael specializes in creating exquisite pastries and desserts. His attention to detail and creativity make our baked goods truly special.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia Lee">
-                        <h3>Sophia Lee</h3>
-                        <p>Cake Designer</p>
-                        <p>Sophia's creative designs and innovative flavors make our custom cakes the talk of every special occasion.</p>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophia Dough">
+                        <h3>Sophia Dough</h3>
+                        <p>Bread Specialist</p>
+                        <p>Sophia is our expert in all things bread. Her knowledge of fermentation and dough handling results in bread that's nothing short of extraordinary.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-title">
-                <h2>What Our Customers Say</h2>
-                <p>Hear from our satisfied customers</p>
-            </div>
+            <h2 class="section-title">What Our Customers Say</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="testimonial">
-                        <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Customer 1">
-                        <h3>Sarah W.</h3>
-                        <p>"The chocolate fudge cake from Sweet Delights Bakery was the highlight of my birthday party! Everyone loved it, and I've already placed another order."</p>
+                        <div class="testimonial-text">
+                            "I've been coming to Sweet Delights Bakery for years, and their croissants are simply the best I've ever had. The flaky layers and buttery taste are unbeatable!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Sarah Johnson">
+                            <div class="testimonial-author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Regular Customer</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="testimonial">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer 2">
-                        <h3>David M.</h3>
-                        <p>"I stop by Sweet Delights every morning for their croissants. They're the best in town! The service is always friendly, and the pastries are fresh and delicious."</p>
+                        <div class="testimonial-text">
+                            "The custom cake they made for my daughter's birthday was absolutely stunning. The flavors were perfect, and the decorations were even more beautiful in person. Highly recommend!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="James Wilson">
+                            <div class="testimonial-author-info">
+                                <h4>James Wilson</h4>
+                                <p>Happy Parent</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 offset-md-3">
                     <div class="testimonial">
-                        <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Customer 3">
-                        <h3>Lisa K.</h3>
-                        <p>"Sweet Delights Bakery made the most beautiful wedding cake for my daughter's big day. It was as delicious as it was beautiful. Thank you!"
+                        <div class="testimonial-text">
+                            "Every time I visit Sweet Delights, I leave with a bag full of goodies. Their chocolate chip cookies are my absolute favorite, and the service is always warm and friendly."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Lisa Martinez">
+                            <div class="testimonial-author-info">
+                                <h4>Lisa Martinez</h4>
+                                <p>Cookie Lover</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560008581-055e90dff0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Croissants">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1580894732444-89b03727078a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Scones">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1563453388873-6eee28b41b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cupcakes">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56d49c79e82b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Bread">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cookies">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cakes">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578985709957-9ff09a768374?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Pastries">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Donuts">
                 </div>
             </div>
         </div>
     </section>
     <section class="contact-form" id="contact">
         <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <h2 class="section-title">Visit Us or Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h3>Our Location</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Bake Street, Sweetville, SV 12345</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@sweetdelightsbakery.com</p>
+                        <div class="opening-hours">
+                            <h4>Opening Hours</h4>
+                            <p><strong>Monday - Friday:</strong> 6:00 AM - 8:00 PM</p>
+                            <p><strong>Saturday:</strong> 7:00 AM - 7:00 PM</p>
+                            <p><strong>Sunday:</strong> 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="col-md-6">
+                    <form>
+                        <h3>Send Us a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
     <footer>
@@ -595,14 +691,8 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
-            <div class="newsletter">
-                <p>Subscribe to our newsletter for special offers and updates.</p>
-                <div>
-                    <input type="email" placeholder="Your Email">
-                    <button type="submit">Subscribe</button>
-                </div>
-            </div>
             <p>&copy; 2023 Sweet Delights Bakery. All rights reserved.</p>
+            <p>Where Every Bite is a Delight</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -611,10 +701,33 @@
             const navbar = document.querySelector('nav');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add('shadow');
+                    navbar.classList.add('shadow', 'bg-dark');
                 } else {
-                    navbar.classList.remove('shadow');
+                    navbar.classList.remove('shadow', 'bg-dark');
                 }
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.section-title, .product-card, .team-member, .testimonial, .gallery-item');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+            
+            // Set initial opacity and transform for animations
+            document.querySelectorAll('.section-title, .product-card, .team-member, .testimonial, .gallery-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             });
         });
     </script>
