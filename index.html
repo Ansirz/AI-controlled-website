@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkFlow Design Studio</title>
+    <title>SavorSpot - Culinary Delights</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3f37c9;
-            --accent-color: #4cc9f0;
+            --primary-color: #e67e22;
+            --secondary-color: #d35400;
+            --accent-color: #f39c12;
             --light-color: #f8f9fa;
-            --dark-color: #212529;
-            --text-color: #3d405b;
-            --success-color: #28a745;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
         }
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             background-color: var(--light-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -29,6 +28,16 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="150" cy="150" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23pattern)"/></svg>');
+            opacity: 0.3;
         }
         header h1 {
             font-size: 3.2rem;
@@ -42,7 +51,7 @@
             animation: fadeInUp 1.5s ease-out 0.3s both;
         }
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -76,7 +85,7 @@
         }
         nav a:hover {
             color: white;
-            background-color: rgba(76, 201, 240, 0.2);
+            background-color: rgba(243, 156, 18, 0.2);
         }
         .section-title {
             text-align: center;
@@ -96,10 +105,10 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .services, .portfolio {
+        .dishes, .gallery {
             padding: 3rem 0;
         }
-        .service-card, .portfolio-item {
+        .dish-card, .gallery-item {
             background-color: white;
             border-radius: 12px;
             overflow: hidden;
@@ -109,24 +118,24 @@
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
         }
-        .service-card.visible, .portfolio-item.visible {
+        .dish-card.visible, .gallery-item.visible {
             opacity: 1;
         }
-        .service-card:hover, .portfolio-item:hover {
+        .dish-card:hover, .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
-        .service-img, .portfolio-img {
+        .dish-img, .gallery-img {
             height: 280px;
             overflow: hidden;
         }
-        .service-img img, .portfolio-img img {
+        .dish-img img, .gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .service-card:hover .service-img img, .portfolio-item:hover .portfolio-img {
+        .dish-card:hover .dish-img img, .gallery-item:hover .gallery-img img {
             transform: scale(1.05);
         }
         .video-container {
@@ -145,18 +154,18 @@
             width: 100%;
             height: 100%;
         }
-        .service-info, .portfolio-info {
+        .dish-info, .gallery-info {
             padding: 1.75rem;
         }
-        .service-info h3, .portfolio-info h4 {
+        .dish-info h3, .gallery-info h4 {
             margin-bottom: 0.75rem;
             color: var(--primary-color);
         }
-        .service-info p, .portfolio-info p {
+        .dish-info p, .gallery-info p {
             color: #666;
             margin-bottom: 1rem;
         }
-        .service-icon {
+        .dish-icon {
             font-size: 2.5rem;
             color: var(--accent-color);
             margin-bottom: 1rem;
@@ -303,7 +312,7 @@
         .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
             border-color: var(--accent-color);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
         }
         .contact-form button {
             background-color: var(--primary-color);
@@ -320,9 +329,9 @@
             letter-spacing: 1px;
         }
         .contact-form button:hover {
-            background-color: #3a56d4;
+            background-color: #d35400;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.3);
         }
         footer {
             background-color: var(--dark-color);
@@ -421,8 +430,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>InkFlow Design Studio</h1>
-            <p>Crafting Visual Stories That Inspire and Engage</p>
+            <h1>SavorSpot</h1>
+            <p>Where Every Bite Tells a Story</p>
         </div>
     </header>
     
@@ -437,7 +446,7 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#dishes">Dishes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About Us</a>
@@ -449,7 +458,7 @@
                         <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -461,85 +470,85 @@
     
     <section class="hero" id="home">
         <div class="container">
-            <h1>Transforming Ideas into Visual Masterpieces</h1>
-            <p>At InkFlow Design Studio, we specialize in creating stunning visual designs that elevate your brand and captivate your audience.</p>
-            <a href="#services" class="btn btn-primary btn-lg">Explore Our Services</a>
+            <h1>Culinary Delights Await</h1>
+            <p>At SavorSpot, we craft unforgettable dining experiences with passion and precision. Join us for a journey through flavors that tell a story.</p>
+            <a href="#dishes" class="btn btn-primary btn-lg">Explore Our Dishes</a>
         </div>
     </section>
     
-    <section class="services" id="services">
+    <section class="dishes" id="dishes">
         <div class="container">
-            <h2 class="section-title">Our Design Services</h2>
+            <h2 class="section-title">Our Signature Dishes</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Logo Design">
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="https://images.pexels.com/photos/7160695/pexels-photo-7160695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Tofu Stir-Fry">
                         </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
-                            <h3>Logo Design</h3>
-                            <p>Unique and memorable logos that encapsulate your brand identity and leave a lasting impression.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Branding">
-                        </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                            <h3>Branding</h3>
-                            <p>Comprehensive branding solutions that create a cohesive and memorable brand identity across all platforms.</p>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-utensils"></i></div>
+                            <h3>Tofu Stir-Fry</h3>
+                            <p>Our signature tofu stir-fry features crispy tofu cubes tossed with colorful vegetables and a savory sauce, offering a perfect balance of textures and flavors.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-card">
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="https://images.pexels.com/photos/38979166/pexels-photo-38979166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Fresh Corn">
+                        </div>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-leaf"></i></div>
+                            <h3>Fresh Corn</h3>
+                            <p>Sweet and tender fresh corn on the cob, grilled to perfection and served with a side of butter and salt for a simple yet delicious treat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dish-card">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/6755168" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h3>Web Design</h3>
-                            <p>Beautiful and functional websites that enhance user experience and drive engagement.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
-                        </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-print"></i></div>
-                            <h3>Print Design</h3>
-                            <p>Eye-catching print materials including brochures, business cards, and posters.</p>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-bowl-food"></i></div>
+                            <h3>Vegetable Platter</h3>
+                            <p>A vibrant assortment of fresh vegetables, artfully arranged to showcase the best of seasonal produce, perfect for sharing.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Social Media Graphics">
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="https://images.pexels.com/photos/24866519/pexels-photo-24866519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Grilled Chicken Salad">
                         </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-share-alt"></i></div>
-                            <h3>Social Media Graphics</h3>
-                            <p>Engaging graphics tailored for social media platforms to boost your online presence.</p>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-drumstick-bite"></i></div>
+                            <h3>Grilled Chicken Salad</h3>
+                            <p>Juicy grilled chicken breast served over a bed of crisp greens, topped with cherry tomatoes, cucumbers, and a creamy dressing.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-card">
+                    <div class="dish-card">
+                        <div class="dish-img">
+                            <img src="https://images.pexels.com/photos/31771054/pexels-photo-31771054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Tandoori Chicken">
+                        </div>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-fire"></i></div>
+                            <h3>Tandoori Chicken</h3>
+                            <p>Succulent tandoori chicken marinated in aromatic spices and slow-cooked to perfection, served with mint chutney and naan bread.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dish-card">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/5jXQ4ZQ5XcQ" frameborder="0" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/7610983" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="service-info">
-                            <div class="service-icon"><i class="fas fa-box-open"></i></div>
-                            <h3>Packaging Design</h3>
-                            <p>Creative packaging designs that make your products stand out on the shelves.</p>
+                        <div class="dish-info">
+                            <div class="dish-icon"><i class="fas fa-pizza-slice"></i></div>
+                            <h3>Margherita Pizza</h3>
+                            <p>Classic Margherita pizza with a thin, crispy crust topped with fresh tomatoes, mozzarella cheese, and basil leaves, finished with a drizzle of olive oil.</p>
                         </div>
                     </div>
                 </div>
@@ -549,68 +558,68 @@
     
     <section class="about-section" id="about">
         <div class="container">
-            <h2 class="section-title">About InkFlow Design Studio</h2>
+            <h2 class="section-title">About SavorSpot</h2>
             <div class="about-content">
                 <p><strong>Our Story:</strong></p>
-                <p>Founded in 2010, InkFlow Design Studio started with a passion for transforming ideas into visually compelling designs. Over the years, we've grown into a full-service design agency, known for our innovative approach and commitment to excellence.</p>
+                <p>Founded in 2010, SavorSpot began with a simple vision: to create a dining experience that celebrates the art of cooking and the joy of sharing meals. Our journey started with a small kitchen and a passion for crafting delicious dishes. Today, we are proud to serve a diverse menu that reflects our commitment to quality and innovation.</p>
                 <p><strong>Our Mission:</strong></p>
-                <p>To inspire and engage audiences through creative and innovative design solutions that tell your brand's story and drive meaningful connections.</p>
+                <p>To inspire and delight our guests with exceptional culinary experiences that combine fresh ingredients, creative flavors, and warm hospitality. We strive to create a space where every meal tells a story and leaves a lasting impression.</p>
                 <p><strong>Our Values:</strong></p>
-                <p>We value creativity, collaboration, integrity, and continuous learning. Our clients' success is our success, and we strive to build long-term relationships based on trust and mutual respect.</p>
+                <p>We value creativity, quality, and sustainability. Our clients' satisfaction is our success, and we strive to build long-term relationships based on trust and mutual respect.</p>
             </div>
         </div>
     </section>
     
     <section class="team-section" id="team">
         <div class="container">
-            <h2 class="section-title">Meet Our Creative Team</h2>
+            <h2 class="section-title">Meet Our Culinary Team</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Johnson">
-                        <h3>Alex Johnson</h3>
-                        <p class="role">Creative Director</p>
-                        <p>With over 15 years of experience, Alex leads our creative vision and ensures every project reflects our commitment to innovation and quality.</p>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chef James">
+                        <h3>Chef James</h3>
+                        <p class="role">Head Chef</p>
+                        <p>With over 15 years of experience, Chef James leads our kitchen with a passion for creating innovative and delicious dishes. His expertise in culinary arts ensures that every meal at SavorSpot is a masterpiece.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Williams">
-                        <h3>Sarah Williams</h3>
-                        <p class="role">Senior Graphic Designer</p>
-                        <p>Sarah specializes in branding and visual identity. Her keen eye for detail and creative flair make her an invaluable member of our team.</p>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Chef Sarah">
+                        <h3>Chef Sarah</h3>
+                        <p class="role">Sous Chef</p>
+                        <p>Chef Sarah specializes in preparing appetizers and desserts, bringing her creative flair and attention to detail to every dish. Her passion for food and commitment to excellence make her an invaluable member of our team.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Brown">
-                        <h3>Michael Brown</h3>
-                        <p class="role">Web Designer</p>
-                        <p>Michael brings a fresh perspective to web design, creating intuitive and visually appealing interfaces that enhance user experience.</p>
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Chef Michael">
+                        <h3>Chef Michael</h3>
+                        <p class="role">Pastry Chef</p>
+                        <p>Chef Michael is our expert in pastry and baking, crafting delectable desserts that are as visually stunning as they are delicious. His dedication to perfection ensures that every bite is a sweet experience.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Emily Davis">
-                        <h3>Emily Davis</h3>
-                        <p class="role">Packaging Designer</p>
-                        <p>Emily's expertise in packaging design ensures that our clients' products stand out on the shelves and leave a lasting impression.</p>
+                        <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Chef Emily">
+                        <h3>Chef Emily</h3>
+                        <p class="role">Grill Master</p>
+                        <p>Chef Emily's expertise in grilling brings a smoky, caramelized flavor to our dishes. Her skill in preparing meats and vegetables ensures that every grill masterpiece is cooked to perfection.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/men/25.jpg" alt="David Wilson">
-                        <h3>David Wilson</h3>
-                        <p class="role">Marketing Specialist</p>
-                        <p>David focuses on leveraging design to enhance marketing strategies, ensuring our clients' messages reach and resonate with their target audiences.</p>
+                        <img src="https://randomuser.me/api/portraits/men/25.jpg" alt="Chef David">
+                        <h3>Chef David</h3>
+                        <p class="role">Seafood Specialist</p>
+                        <p>Chef David's love for seafood shines through in every dish he prepares. His knowledge of different seafood varieties and cooking techniques ensures that our seafood dishes are fresh, flavorful, and beautifully presented.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa Martinez">
-                        <h3>Lisa Martinez</h3>
-                        <p class="role">Project Manager</p>
-                        <p>Lisa ensures that every project is completed on time and within budget, coordinating between our team and clients to deliver exceptional results.</p>
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Chef Lisa">
+                        <h3>Chef Lisa</h3>
+                        <p class="role">Vegetable Specialist</p>
+                        <p>Chef Lisa's passion for vegetables and fresh ingredients is evident in every dish she prepares. Her creative approach to vegetable dishes ensures that our guests enjoy a variety of flavors and textures.</p>
                     </div>
                 </div>
             </div>
@@ -619,18 +628,18 @@
     
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title">What Our Guests Say</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "InkFlow transformed our brand identity with their creative and innovative approach. Our new logo and branding have significantly boosted our visibility and customer engagement."
+                            "SavorSpot has become my go-to restaurant for special occasions. The attention to detail and creativity in every dish make it a truly memorable dining experience."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert Smith">
                             <div class="testimonial-author-info">
                                 <h4>Robert Smith</h4>
-                                <p>CEO, Tech Innovations</p>
+                                <p>Regular Guest</p>
                             </div>
                         </div>
                     </div>
@@ -638,13 +647,13 @@
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "The website design by InkFlow exceeded all our expectations. It's not only visually stunning but also highly functional, leading to a significant increase in user engagement and conversions."
+                            "The Tandoori Chicken at SavorSpot is simply outstanding. The flavors are rich and authentic, and the presentation is impeccable. I highly recommend it to anyone looking for a culinary delight."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Emily Johnson">
                             <div class="testimonial-author-info">
                                 <h4>Emily Johnson</h4>
-                                <p>Marketing Director, GreenEarth</p>
+                                <p>Food Enthusiast</p>
                             </div>
                         </div>
                     </div>
@@ -652,13 +661,13 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "Working with InkFlow was a game-changer for our business. Their attention to detail and creative solutions helped us create packaging that not only looks amazing but also drives sales."
+                            "I've been coming to SavorSpot for years, and their Vegetable Platter never fails to impress. The freshness of the ingredients and the creative presentation make it a standout dish on the menu."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="James Wilson">
                             <div class="testimonial-author-info">
                                 <h4>James Wilson</h4>
-                                <p>Founder, FreshBites</p>
+                                <p>Frequent Visitor</p>
                             </div>
                         </div>
                     </div>
@@ -667,50 +676,48 @@
         </div>
     </section>
     
-    <section class="portfolio" id="portfolio">
+    <section class="gallery" id="gallery">
         <div class="container">
-            <h2 class="section-title">Our Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Logo Design Project">
-                    <div class="portfolio-info">
-                        <h4>Logo Design for Tech Innovations</h4>
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/7160695/pexels-photo-7160695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="gallery-img" alt="Tofu Stir-Fry">
+                    <div class="gallery-info">
+                        <h4>Tofu Stir-Fry</h4>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/38979166/pexels-photo-38979166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="gallery-img" alt="Fresh Corn">
+                    <div class="gallery-info">
+                        <h4>Fresh Corn</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/6755168" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Branding Process for GreenEarth</h4>
+                    <div class="gallery-info">
+                        <h4>Vegetable Platter</h4>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/24866519/pexels-photo-24866519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="gallery-img" alt="Grilled Chicken Salad">
+                    <div class="gallery-info">
+                        <h4>Grilled Chicken Salad</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/31771054/pexels-photo-31771054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="gallery-img" alt="Tandoori Chicken">
+                    <div class="gallery-info">
+                        <h4>Tandoori Chicken</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/7610983" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Web Design for FreshBites</h4>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Print Design Project">
-                    <div class="portfolio-info">
-                        <h4>Print Materials for Creative Pulse</h4>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Social Media Graphics Project">
-                    <div class="portfolio-info">
-                        <h4>Social Media Graphics for UrbanLife</h4>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/5jXQ4ZQ5XcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Packaging Design for Nature's Choice</h4>
+                    <div class="gallery-info">
+                        <h4>Margherita Pizza</h4>
                     </div>
                 </div>
             </div>
@@ -724,10 +731,10 @@
                 <div class="col-md-6">
                     <div class="contact-info">
                         <h3>Our Location</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Avenue, Creative City, CC 12345</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Avenue, Food City, FC 12345</p>
                         <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                        <p><i class="fas fa-envelope"></i> info@inkflowdesign.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                        <p><i class="fas fa-envelope"></i> info@savorspot.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 11:00 AM - 10:00 PM</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -749,15 +756,13 @@
                             <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="projectType">Project Type</label>
-                            <select class="form-control" id="projectType" name="projectType" required>
-                                <option value="" selected disabled>Select Project Type</option>
-                                <option value="logo">Logo Design</option>
-                                <option value="branding">Branding</option>
-                                <option value="web">Web Design</option>
-                                <option value="print">Print Design</option>
-                                <option value="social">Social Media Graphics</option>
-                                <option value="packaging">Packaging Design</option>
+                            <label for="dishType">Dish Type</label>
+                            <select class="form-control" id="dishType" name="dishType" required>
+                                <option value="" selected disabled>Select Dish Type</option>
+                                <option value="appetizer">Appetizer</option>
+                                <option value="main">Main Course</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="drink">Drink</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -775,19 +780,19 @@
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="footer-links">
                 <a href="#home">Home</a>
-                <a href="#services">Services</a>
+                <a href="#dishes">Dishes</a>
                 <a href="#about">About Us</a>
                 <a href="#team">Our Team</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 InkFlow Design Studio. All rights reserved.</p>
-                <p>Crafting Visual Stories That Inspire</p>
+                <p>&copy; 2023 SavorSpot. All rights reserved.</p>
+                <p>Where Every Bite Tells a Story</p>
             </div>
         </div>
     </footer>
@@ -806,7 +811,7 @@
             
             // Animate elements on scroll
             const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.service-card, .team-member, .testimonial, .portfolio-item');
+                const elements = document.querySelectorAll('.dish-card, .team-member, .testimonial, .gallery-item');
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.3;
@@ -829,7 +834,7 @@
                     email: document.getElementById('email').value,
                     subject: document.getElementById('subject').value,
                     message: document.getElementById('message').value,
-                    projectType: document.getElementById('projectType').value,
+                    dishType: document.getElementById('dishType').value,
                     timestamp: new Date().toISOString()
                 };
                 
