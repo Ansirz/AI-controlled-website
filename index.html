@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Delights Bakery</title>
+    <title>PixelCraft Graphics Design Agency</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #d4a574;
-            --secondary-color: #f8e8e8;
-            --accent-color: #e67e22;
-            --dark-color: #2c3e50;
-            --light-color: #ecf0f1;
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-color: #2d3436;
+            --light-color: #f5f6fa;
         }
         * {
             margin: 0;
@@ -20,13 +20,13 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
             color: #333;
             overflow-x: hidden;
         }
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
             padding: 2rem 0;
             text-align: center;
@@ -61,7 +61,7 @@
             border-radius: 4px;
         }
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -89,8 +89,8 @@
             transition: all 0.3s;
         }
         .btn-primary:hover {
-            background-color: #c06c18;
-            border-color: #c06c18;
+            background-color: #e84393;
+            border-color: #e84393;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -112,11 +112,11 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .products {
+        .services {
             padding: 3rem 0;
             background-color: var(--light-color);
         }
-        .product-card {
+        .service-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -126,38 +126,38 @@
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
         }
-        .product-card.visible {
+        .service-card.visible {
             opacity: 1;
         }
-        .product-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .product-img {
+        .service-img {
             height: 250px;
             overflow: hidden;
         }
-        .product-img img {
+        .service-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .product-card:hover .product-img img {
+        .service-card:hover .service-img img {
             transform: scale(1.05);
         }
-        .product-info {
+        .service-info {
             padding: 1.5rem;
         }
-        .product-info h3 {
+        .service-info h3 {
             margin-bottom: 0.5rem;
             color: var(--dark-color);
         }
-        .product-info p {
+        .service-info p {
             color: #666;
             margin-bottom: 1rem;
         }
-        .product-price {
+        .service-price {
             font-weight: bold;
             color: var(--accent-color);
             font-size: 1.2rem;
@@ -171,7 +171,7 @@
             margin: 0 auto;
             text-align: left;
             padding: 2rem;
-            background-color: var(--secondary-color);
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -223,7 +223,7 @@
             padding: 3rem 0;
         }
         .testimonial {
-            background-color: var(--secondary-color);
+            background-color: white;
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
@@ -268,17 +268,17 @@
             color: #666;
             font-size: 0.9rem;
         }
-        .gallery {
+        .portfolio {
             padding: 3rem 0;
             text-align: center;
         }
-        .gallery-grid {
+        .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1rem;
             margin-top: 2rem;
         }
-        .gallery-item {
+        .portfolio-item {
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -286,26 +286,26 @@
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
         }
-        .gallery-item.visible {
+        .portfolio-item.visible {
             opacity: 1;
         }
-        .gallery-item:hover {
+        .portfolio-item:hover {
             transform: scale(1.05);
         }
-        .gallery-img {
+        .portfolio-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .gallery-item:hover .gallery-img {
+        .portfolio-item:hover .portfolio-img {
             transform: scale(1.1);
         }
         .contact-form {
             max-width: 600px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: var(--secondary-color);
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -331,7 +331,7 @@
             font-size: 1rem;
         }
         .contact-form button {
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: white;
             border: none;
             padding: 0.75rem 2rem;
@@ -342,7 +342,7 @@
             transition: background-color 0.3s;
         }
         .contact-form button:hover {
-            background-color: #c06c18;
+            background-color: #5649c0;
         }
         footer {
             background-color: var(--dark-color);
@@ -429,8 +429,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>Sweet Delights Bakery</h1>
-            <p>Where Every Bite Tells a Story</p>
+            <h1>PixelCraft</h1>
+            <p>Crafting Visual Stories That Inspire</p>
         </div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -444,7 +444,7 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About Us</a>
@@ -456,7 +456,7 @@
                         <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -467,84 +467,84 @@
     </nav>
     <section class="hero" id="home">
         <div class="container">
-            <h1>Freshly Baked Goodness Daily</h1>
-            <p>At Sweet Delights Bakery, we take pride in crafting each pastry, bread, and cake with love and care. Our recipes have been perfected over generations, ensuring every bite is a delightful experience.</p>
-            <a href="#products" class="btn btn-primary btn-lg">View Our Menu</a>
+            <h1>Designing the Future, One Pixel at a Time</h1>
+            <p>At PixelCraft, we blend creativity and technology to deliver stunning visual solutions. From branding to digital art, we bring your vision to life with precision and passion.</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
         </div>
     </section>
-    <section class="products" id="products">
+    <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Delicious Offerings</h2>
+            <h2 class="section-title">Our Services</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1560008581-055e90dff0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Croissants">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Brand Identity">
                         </div>
-                        <div class="product-info">
-                            <h3>Flaky Croissants</h3>
-                            <p>Layers of buttery goodness that melt in your mouth. Perfect for breakfast or a snack.</p>
-                            <div class="product-price">$4.99</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1580894732444-89b03727078a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Scones">
-                        </div>
-                        <div class="product-info">
-                            <h3>Classic Scones</h3>
-                            <p>Warm, tender, and served with clotted cream and jam. A true British classic.</p>
-                            <div class="product-price">$3.99</div>
+                        <div class="service-info">
+                            <h3>Brand Identity</h3>
+                            <p>We create unique and memorable brand identities that resonate with your audience and set you apart from the competition.</p>
+                            <div class="service-price">Starting at $1,500</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1563453388873-6eee28b41b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cupcakes">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Web Design">
                         </div>
-                        <div class="product-info">
-                            <h3>Assorted Cupcakes</h3>
-                            <p>Mini cakes with a variety of flavors and frostings. Perfect for any occasion.</p>
-                            <div class="product-price">$2.50 each</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1589829085413-56d49c79e82b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bread">
-                        </div>
-                        <div class="product-info">
-                            <h3>Artisan Bread</h3>
-                            <p>Freshly baked bread with a crispy crust and soft interior. Made with the finest ingredients.</p>
-                            <div class="product-price">$5.99</div>
+                        <div class="service-info">
+                            <h3>Web Design</h3>
+                            <p>Our web design services focus on creating visually appealing and user-friendly websites that enhance your online presence.</p>
+                            <div class="service-price">Starting at $2,000</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cookies">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Graphic Design">
                         </div>
-                        <div class="product-info">
-                            <h3>Chocolate Chip Cookies</h3>
-                            <p>Homemade cookies with gooey chocolate chips. Perfect with a glass of milk.</p>
-                            <div class="product-price">$2.99 per dozen</div>
+                        <div class="service-info">
+                            <h3>Graphic Design</h3>
+                            <p>From logos to marketing materials, we provide high-quality graphic design services tailored to your needs.</p>
+                            <div class="service-price">Starting at $800</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cakes">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="UI/UX Design">
                         </div>
-                        <div class="product-info">
-                            <h3>Custom Cakes</h3>
-                            <p>Beautifully decorated cakes for any celebration. Custom designs available.</p>
-                            <div class="product-price">$45.00+</div>
+                        <div class="service-info">
+                            <h3>UI/UX Design</h3>
+                            <p>We design intuitive and engaging user interfaces that provide seamless user experiences for your digital products.</p>
+                            <div class="service-price">Starting at $2,500</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Illustration">
+                        </div>
+                        <div class="service-info">
+                            <h3>Illustration</h3>
+                            <p>Our talented illustrators create custom artwork that brings your ideas to life, whether for books, websites, or marketing campaigns.</p>
+                            <div class="service-price">Starting at $1,000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Digital Marketing">
+                        </div>
+                        <div class="service-info">
+                            <h3>Digital Marketing</h3>
+                            <p>We help you create compelling digital marketing campaigns that drive traffic, engagement, and conversions.</p>
+                            <div class="service-price">Starting at $3,000</div>
                         </div>
                     </div>
                 </div>
@@ -553,42 +553,42 @@
     </section>
     <section class="about-section" id="about">
         <div class="container">
-            <h2 class="section-title">About Sweet Delights Bakery</h2>
+            <h2 class="section-title">About PixelCraft</h2>
             <div class="about-content">
                 <p><strong>Our Story:</strong></p>
-                <p>Sweet Delights Bakery was founded in 1998 by our beloved grandmother, who had a passion for baking. What started as a small kitchen operation has grown into a beloved bakery serving the community with freshly baked goods every day.</p>
-                <p>We believe that baking is not just about creating delicious treats; it's about bringing joy and warmth to people's lives. Each recipe we bake is crafted with care and a touch of love, ensuring that every customer leaves our bakery with a smile on their face.</p>
-                <p><strong>Our Commitment:</strong></p>
-                <p>At Sweet Delights Bakery, we are committed to using only the finest ingredients. We source our butter, flour, and other essentials from trusted local suppliers to ensure the highest quality in every product. Our dedication to quality and tradition has earned us a loyal customer base and a reputation for excellence in the community.</p>
+                <p>PixelCraft was founded in 2010 by a group of passionate designers and developers who believed in the power of visual storytelling. Over the years, we have grown into a leading graphics design agency, serving clients across the globe with innovative and bespoke design solutions.</p>
+                <p>Our mission is to transform ideas into visually stunning realities. We combine creativity with cutting-edge technology to deliver designs that not only look great but also drive results.</p>
+                <p><strong>Our Values:</strong></p>
+                <p>We are committed to excellence, innovation, and integrity. Our team of experts works closely with clients to understand their needs and deliver customized solutions that exceed expectations.</p>
             </div>
         </div>
     </section>
     <section class="team-section" id="team">
         <div class="container">
-            <h2 class="section-title">Meet Our Baking Team</h2>
+            <h2 class="section-title">Meet Our Creative Team</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Baker">
                         <h3>Emma Baker</h3>
-                        <p>Head Baker & Founder</p>
-                        <p>With over 25 years of experience, Emma is the heart and soul of Sweet Delights Bakery. She's the mastermind behind our famous recipes and the driving force behind our success.</p>
+                        <p>Creative Director</p>
+                        <p>Emma leads our creative team with over 15 years of experience in branding and design. Her vision and leadership have been instrumental in shaping PixelCraft's success.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Croissant">
                         <h3>Michael Croissant</h3>
-                        <p>Pastry Chef</p>
-                        <p>Michael specializes in creating exquisite pastries and desserts. His attention to detail and creativity make our baked goods truly special.</p>
+                        <p>Lead Designer</p>
+                        <p>Michael specializes in web and UI/UX design. His attention to detail and innovative approach make him a key asset to our team.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-member">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophia Dough">
                         <h3>Sophia Dough</h3>
-                        <p>Bread Specialist</p>
-                        <p>Sophia is our expert in all things bread. Her knowledge of fermentation and dough handling results in bread that's nothing short of extraordinary.</p>
+                        <p>Graphic Designer</p>
+                        <p>Sophia is our expert in graphic design, creating stunning visuals for branding, marketing, and digital media. Her creativity knows no bounds.</p>
                     </div>
                 </div>
             </div>
@@ -596,18 +596,18 @@
     </section>
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
+            <h2 class="section-title">What Our Clients Say</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "I've been coming to Sweet Delights Bakery for years, and their croissants are simply the best I've ever had. The flaky layers and buttery taste are unbeatable!"
+                            "PixelCraft transformed our brand identity! Their creativity and attention to detail exceeded our expectations. We couldn't be happier with the results."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Sarah Johnson">
                             <div class="testimonial-author-info">
                                 <h4>Sarah Johnson</h4>
-                                <p>Regular Customer</p>
+                                <p>CEO, TechStart</p>
                             </div>
                         </div>
                     </div>
@@ -615,13 +615,13 @@
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "The custom cake they made for my daughter's birthday was absolutely stunning. The flavors were perfect, and the decorations were even more beautiful in person. Highly recommend!"
+                            "The web design team at PixelCraft created a website that perfectly captures our brand's essence. Their professionalism and expertise are unmatched."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="James Wilson">
                             <div class="testimonial-author-info">
                                 <h4>James Wilson</h4>
-                                <p>Happy Parent</p>
+                                <p>Founder, Creative Solutions</p>
                             </div>
                         </div>
                     </div>
@@ -629,13 +629,13 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "Every time I visit Sweet Delights, I leave with a bag full of goodies. Their chocolate chip cookies are my absolute favorite, and the service is always warm and friendly."
+                            "We hired PixelCraft for a complete rebranding project, and they delivered beyond our wildest dreams. Their team is professional, creative, and dedicated to excellence."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Lisa Martinez">
                             <div class="testimonial-author-info">
                                 <h4>Lisa Martinez</h4>
-                                <p>Cookie Lover</p>
+                                <p>Marketing Director, Global Ventures</p>
                             </div>
                         </div>
                     </div>
@@ -643,30 +643,157 @@
             </div>
         </div>
     </section>
-    <section class="gallery" id="gallery">
+    <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560008581-055e90dff0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Croissants">
+            <h2 class="section-title">Our Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Brand Identity Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1580894732444-89b03727078a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Scones">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Web Design Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1563453388873-6eee28b41b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cupcakes">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Graphic Design Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1589829085413-56d49c79e82b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Bread">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="UI/UX Design Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cookies">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Illustration Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Cakes">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Digital Marketing Project">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1578985709957-9ff09a768374?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="gallery-img" alt="Pastries">
+            </div>
+        </div>
+    </section>
+    <section class="contact-form" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h3>Our Location</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creativetown, CT 12345</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> hello@pixelcraft.com</p>
+                        <div class="opening-hours">
+                            <h4>Opening Hours</h4>
+                            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                            <p><strong>Sunday:</strong> Closed</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <h3>Send Us a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 PixelCraft Graphics Design Agency. All rights reserved.</p>
+            <p>Crafting Visual Stories That Inspire</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow', 'bg-dark');
+                } else {
+                    navbar.classList.remove('shadow', 'bg-dark');
+                }
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.section-title, .service-card, .team-member, .testimonial, .portfolio-item');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+            
+            // Set initial state for animations
+            document.querySelectorAll('.service-card, .team-member, .testimonial, .portfolio-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Handle form submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Replace with your actual webhook URL
+                const webhookUrl = 'https://hooks.slack.com/services/YOUR/WEBHOOK/URL';
+                
+                fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Message sent successfully!');
+                        contactForm.reset();
+                    } else {
+                        alert('There was an error sending your message. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error sending your message. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
