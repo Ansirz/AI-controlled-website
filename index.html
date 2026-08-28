@@ -30,16 +30,6 @@
             position: relative;
             overflow: hidden;
         }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="150" cy="150" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23pattern)"/></svg>');
-            opacity: 0.3;
-        }
         header h1 {
             font-size: 3.2rem;
             margin-bottom: 1rem;
@@ -138,6 +128,22 @@
         }
         .service-card:hover .service-img img, .portfolio-item:hover .portfolio-img {
             transform: scale(1.05);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         .service-info, .portfolio-info {
             padding: 1.75rem;
@@ -491,8 +497,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Web Design">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
@@ -504,7 +510,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
+                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-print"></i></div>
@@ -516,7 +522,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Social Media Graphics">
+                            <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Social Media Graphics">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-share-alt"></i></div>
@@ -527,8 +533,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Packaging Design">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/5jXQ4ZQ5XcQ" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-box-open"></i></div>
@@ -672,31 +678,37 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Branding Project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-info">
-                        <h4>Branding for GreenEarth</h4>
+                        <h4>Branding Process for GreenEarth</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Web Design Project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-info">
-                        <h4>Website Design for FreshBites</h4>
+                        <h4>Web Design for FreshBites</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Print Design Project">
+                    <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Print Design Project">
                     <div class="portfolio-info">
                         <h4>Print Materials for Creative Pulse</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Social Media Graphics Project">
+                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Social Media Graphics Project">
                     <div class="portfolio-info">
                         <h4>Social Media Graphics for UrbanLife</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Packaging Design Project">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/5jXQ4ZQ5XcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     <div class="portfolio-info">
                         <h4>Packaging Design for Nature's Choice</h4>
                     </div>
