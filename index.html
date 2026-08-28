@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VividCraft Design Studio</title>
+    <title>InkFlow Design Studio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #6c5ce7;
-            --secondary-color: #a29bfe;
-            --accent-color: #f093fb;
-            --dark-color: #2d3436;
-            --light-color: #f5f6fa;
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
             --text-color: #3d405b;
+            --success-color: #28a745;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--light-color);
             color: var(--text-color);
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
         }
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 3rem 0 1.5rem;
+            padding: 2.5rem 0 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -38,22 +37,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1000" height="1000" fill="url(%23grid)"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="150" cy="150" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23pattern)"/></svg>');
             opacity: 0.3;
         }
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
             animation: fadeInDown 1.5s ease-out;
         }
         header p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
             animation: fadeInUp 1.5s ease-out 0.3s both;
         }
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -87,13 +86,13 @@
         }
         nav a:hover {
             color: white;
-            background-color: rgba(240, 147, 251, 0.2);
+            background-color: rgba(76, 201, 240, 0.2);
         }
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
-            color: var(--dark-color);
+            color: var(--secondary-color);
             position: relative;
             display: inline-block;
         }
@@ -137,7 +136,7 @@
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .service-card:hover .service-img img, .portfolio-item:hover .portfolio-img img {
+        .service-card:hover .service-img img, .portfolio-item:hover .portfolio-img {
             transform: scale(1.05);
         }
         .service-info, .portfolio-info {
@@ -298,7 +297,7 @@
         .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
             border-color: var(--accent-color);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
         }
         .contact-form button {
             background-color: var(--primary-color);
@@ -315,9 +314,9 @@
             letter-spacing: 1px;
         }
         .contact-form button:hover {
-            background-color: #5649c0;
+            background-color: #3a56d4;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
         footer {
             background-color: var(--dark-color);
@@ -416,8 +415,8 @@
 <body>
     <header>
         <div class="container">
-            <h1>VividCraft Design Studio</h1>
-            <p>Transforming Ideas into Stunning Visual Experiences</p>
+            <h1>InkFlow Design Studio</h1>
+            <p>Crafting Visual Stories That Inspire and Engage</p>
         </div>
     </header>
     
@@ -456,8 +455,8 @@
     
     <section class="hero" id="home">
         <div class="container">
-            <h1>Crafting Visual Stories That Inspire</h1>
-            <p>At VividCraft Design Studio, we specialize in creating unique and impactful designs that resonate with your audience and elevate your brand.</p>
+            <h1>Transforming Ideas into Visual Masterpieces</h1>
+            <p>At InkFlow Design Studio, we specialize in creating stunning visual designs that elevate your brand and captivate your audience.</p>
             <a href="#services" class="btn btn-primary btn-lg">Explore Our Services</a>
         </div>
     </section>
@@ -469,7 +468,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Logo Design">
+                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Logo Design">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
@@ -481,7 +480,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1560769629-975eb97d8c4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Branding">
+                            <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Branding">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
@@ -493,7 +492,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Web Design">
+                            <img src="https://images.pexels.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Web Design">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
@@ -505,7 +504,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1574169208507-84376144848b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
+                            <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Print Design">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-print"></i></div>
@@ -517,7 +516,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1551277598-840d2bbc7d38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Social Media Graphics">
+                            <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Social Media Graphics">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-share-alt"></i></div>
@@ -529,7 +528,7 @@
                 <div class="col-md-4">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://images.pexels.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80&h=500&fit=crop" alt="Packaging Design">
+                            <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Packaging Design">
                         </div>
                         <div class="service-info">
                             <div class="service-icon"><i class="fas fa-box-open"></i></div>
@@ -544,10 +543,10 @@
     
     <section class="about-section" id="about">
         <div class="container">
-            <h2 class="section-title">About VividCraft Design Studio</h2>
+            <h2 class="section-title">About InkFlow Design Studio</h2>
             <div class="about-content">
                 <p><strong>Our Story:</strong></p>
-                <p>Founded in 2015, VividCraft Design Studio started with a simple mission: to transform ideas into visually stunning designs. Our journey began with a small team of passionate designers who believed in the power of creativity to make a difference. Today, we are a full-service design agency known for our innovative approach and commitment to excellence.</p>
+                <p>Founded in 2010, InkFlow Design Studio started with a passion for transforming ideas into visually compelling designs. Over the years, we've grown into a full-service design agency, known for our innovative approach and commitment to excellence.</p>
                 <p><strong>Our Mission:</strong></p>
                 <p>To inspire and engage audiences through creative and innovative design solutions that tell your brand's story and drive meaningful connections.</p>
                 <p><strong>Our Values:</strong></p>
@@ -619,7 +618,7 @@
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "VividCraft transformed our brand identity with their creative and innovative approach. Our new logo and branding have significantly boosted our visibility and customer engagement."
+                            "InkFlow transformed our brand identity with their creative and innovative approach. Our new logo and branding have significantly boosted our visibility and customer engagement."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert Smith">
@@ -633,7 +632,7 @@
                 <div class="col-md-6">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "The website design by VividCraft exceeded all our expectations. It's not only visually stunning but also highly functional, leading to a significant increase in user engagement and conversions."
+                            "The website design by InkFlow exceeded all our expectations. It's not only visually stunning but also highly functional, leading to a significant increase in user engagement and conversions."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Emily Johnson">
@@ -647,7 +646,7 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="testimonial">
                         <div class="testimonial-text">
-                            "Working with VividCraft was a game-changer for our business. Their attention to detail and creative solutions helped us create packaging that not only looks amazing but also drives sales."
+                            "Working with InkFlow was a game-changer for our business. Their attention to detail and creative solutions helped us create packaging that not only looks amazing but also drives sales."
                         </div>
                         <div class="testimonial-author">
                             <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="James Wilson">
@@ -667,37 +666,37 @@
             <h2 class="section-title">Our Portfolio</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Logo Design Project">
+                    <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Logo Design Project">
                     <div class="portfolio-info">
                         <h4>Logo Design for Tech Innovations</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1560769629-975eb97d8c4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Branding Project">
+                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Branding Project">
                     <div class="portfolio-info">
                         <h4>Branding for GreenEarth</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Web Design Project">
+                    <img src="https://images.pexels.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Web Design Project">
                     <div class="portfolio-info">
                         <h4>Website Design for FreshBites</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1574169208507-84376144848b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Print Design Project">
+                    <img src="https://images.pexels.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Print Design Project">
                     <div class="portfolio-info">
                         <h4>Print Materials for Creative Pulse</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1551277598-840d2bbc7d38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Social Media Graphics Project">
+                    <img src="https://images.pexels.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Social Media Graphics Project">
                     <div class="portfolio-info">
                         <h4>Social Media Graphics for UrbanLife</h4>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80&h=500&fit=crop" class="portfolio-img" alt="Packaging Design Project">
+                    <img src="https://images.pexels.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="portfolio-img" alt="Packaging Design Project">
                     <div class="portfolio-info">
                         <h4>Packaging Design for Nature's Choice</h4>
                     </div>
@@ -715,7 +714,7 @@
                         <h3>Our Location</h3>
                         <p><i class="fas fa-map-marker-alt"></i> 123 Design Avenue, Creative City, CC 12345</p>
                         <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                        <p><i class="fas fa-envelope"></i> info@vividcraftdesign.com</p>
+                        <p><i class="fas fa-envelope"></i> info@inkflowdesign.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
@@ -775,7 +774,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 VividCraft Design Studio. All rights reserved.</p>
+                <p>&copy; 2023 InkFlow Design Studio. All rights reserved.</p>
                 <p>Crafting Visual Stories That Inspire</p>
             </div>
         </div>
